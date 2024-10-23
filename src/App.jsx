@@ -14,6 +14,7 @@ import Topics from './components/LanguageTopics';
 import Landing from './components/Landing';
 import Login from './components/Login';
 import Register from './components/SignUp';
+import Resume from './components/resume';
 
 const AppContent = () => {
   const location = useLocation();
@@ -53,6 +54,7 @@ const AppContent = () => {
           <Route path="/topics" element={<Topics fullData={fullData} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/resume" element={<Resume />} />
         </Routes>
       </Box>
     </Box>

@@ -64,9 +64,9 @@ const Dashboard = () => {
     { no: 5, name: 'database', days: '5', hours: '1' }
   ];
 
-  const handleResumeClick = (batchId) => {
+  const handleResumeClick = () => {
     // Redirect to the resume page with batchId
-    navigate(`/resume/${batchId}`); // Assuming you have a route set up for resuming based on the batchId
+    navigate(`/resume`); // Assuming you have a route set up for resuming based on the batchId
   }
   return (
     <ThemeProvider theme={theme}>
