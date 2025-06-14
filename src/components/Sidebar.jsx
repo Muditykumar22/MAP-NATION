@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { List, ListItem, ListItemIcon, ListItemText, IconButton, useTheme, useMediaQuery } from '@mui/material';
 import DashboardIcon from '@mui/icons-material/Dashboard';
@@ -46,7 +45,6 @@ const Sidebar = ({ open, handleDrawerToggle }) => {
                             { text: 'Logout', icon: <ExitToAppIcon className="white-icon" />, path: '/' },
                         ].map((item, index) => (
                             <ListItem
-                                button
                                 key={index}
                                 component={Link}
                                 to={item.path}

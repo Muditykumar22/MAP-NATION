@@ -21,7 +21,8 @@ function FetchLearning({ setFullData }) {
       setLoading(true); // Show loader
       console.log("Sending API call");
       const response = await axios.post("http://localhost:5000/api/roadmaps/generate-roadmap", {
-        prompt: `Provide a learning plan for ${languageName} for ${days} days where I can spend ${hours} hours as I am preparing for ${preparingFor}.`
+        prompt: `Provide a learning plan for ${languageName} for ${days} days where I can spend ${hours} hours as I am preparing for ${preparingFor}.`,
+        userId: "user123" // Replace with actual userId if available
       });
 
       setFullData(response.data); // Store fetched data in state

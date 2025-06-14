@@ -27,7 +27,7 @@ router.post("/generate-roadmap", async (req, res) => {
     // Send back the AI-generated response
     res.send(response);
   } catch (error) {
-    console.log('Error generating roadmap:', error);
+    console.error('Error generating roadmap:', error);
     res.status(500).send("There was an error generating the roadmap.");
   }
 });
