@@ -1,13 +1,26 @@
 // controllers/aiController.js
 
 const AIService = require('../services/aiService'); // Adjust path if needed
+const Roadmap = require('../Models/roadmap');
+const run = require('../utils/geminiapi');
 
 // Controller to generate a roadmap
 exports.generateRoadmap = async (req, res) => {
   try {
-    const { duration, dailyLearningTime, topics, level } = req.body;
-    const roadmap = await AIService.generateRoadmap({ duration, dailyLearningTime, topics, level });
-    res.json({ roadmap });
+    const { prompt, userId } = req.body;
+    if (!prompt || !userId) {
+      return res.status(400).json({ error: 'Prompt and userId are required' });
+    }
+    // Call Gemini API utility to generate roadmap
+    const roadmapData = await run(prompt);
+    // Save to DB
+    const newRoadmap = new Roadmap({
+      user: userId,
+      roadmapData,
+      createdAt: new Date()
+    });
+    await newRoadmap.save();
+    res.json({ roadmap: roadmapData });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
