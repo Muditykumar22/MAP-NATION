@@ -318,7 +318,7 @@ Nginx will distribute all incoming requests across your backend servers automati
 | Load balancing      | Nginx            | Distribute traffic             |
 | Containerization    | Docker/K8s       | Easy deployment & scaling      |
 | DB scaling          | MongoDB Replica  | High availability, no bottlenecks |
-| Monitoring          | Grafana/Prometheus| Track health, auto-scale      |
+
 
 ---
 
